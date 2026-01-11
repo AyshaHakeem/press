@@ -687,7 +687,7 @@ def run_script(app, site: Site, op):
 def get_total_installs_by_app():
 	total_installs = frappe.db.get_all(
 		"Site App",
-		fields=["app", "count(*) as count"],
+		fields=["app", {"COUNT": "*", "as": "count"}],
 		group_by="app",
 		order_by=None,
 	)
