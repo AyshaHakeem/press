@@ -662,7 +662,7 @@ def _create_site_backup_from_agent_job(job: "AgentJob"):
 		site_backup.insert(ignore_permissions=True)
 	except Exception as e:
 		frappe.log_error(
-			f"Failed to create Site Backup record from {job.job_type} agent job: {e!s}",
+			f"Failed to create Site Backup record from agent job: {e!s}",
 			reference_doctype="Agent Job",
 			reference_name=job.name,
 		)
